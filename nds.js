@@ -55,7 +55,7 @@ function dataAd() {
       ndata = response["data"]  //返回json文件中的{"data":xxx} xxx 为一个列表 里面有7个数，是周一到周日的数据，
       option.series[0].data = ndata
       myChart.setOption(option);
-      
+
     },
     error: function (error) {
       console.error('Error sending data:', error);
@@ -68,8 +68,8 @@ function sendmes() {
   $.ajax({
     url: 'http://localhost:5000/sendmes',
     type: 'POST',
-    data:{flow_message :$("#flowinf").value },
-    dataType:"JSON",
+    data: { flow_message: $("#flowinf").value },
+    dataType: "JSON",
     success: function (response) {
       alert("修改成功！")
     },
@@ -86,7 +86,7 @@ function getReflow_information() {
   $.ajax({
     url: 'http://localhost:5000/getReflow_information',
     type: 'POST',
-    data:{mes:$("#reflownum").val()},
+    data: { mes: $("#reflownum").val() },
     dataType: "JSON",
     success: function (response) {
       // Handle the response from the server
